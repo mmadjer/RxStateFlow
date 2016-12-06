@@ -189,6 +189,18 @@ To install RxStateFlow, simply add the following line to your Podfile:
 pod 'RxStateFlow'
 ```
 
+To correctly compile for Swift 3, paste the following at the bottom of your Podfile:
+
+```ruby
+post_install do |installer|
+  installer.pods_project.targets.each do |target|
+    target.build_configurations.each do |config|
+      config.build_settings['SWIFT_VERSION'] = '3.0'
+    end
+  end
+end
+```
+
 #### Carthage
 
 [Carthage](https://github.com/Carthage/Carthage) is a simple, decentralized dependency manager for Cocoa.
