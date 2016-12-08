@@ -18,6 +18,7 @@ Pod::Spec.new do |s|
   s.source       = { :git => "https://github.com/mmadjer/RxStateFlow.git", tag: s.version.to_s }
   s.source_files = 'Sources/**/*.{swift}'
   s.requires_arc = true
+  s.dependency "RxCocoa", "~> 3.0"
   s.dependency "RxSwift", "~> 3.0"
   s.dependency "RealmSwift", "~> 2.0"
 
