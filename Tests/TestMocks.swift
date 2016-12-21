@@ -10,7 +10,7 @@
 
 class TestState: StateObject {
 
-    public private(set) dynamic var value: String = ""
+    open fileprivate(set) dynamic var value: String = ""
 
     override func react(to event: Event) {
         switch event {
@@ -27,13 +27,17 @@ struct TestStringEvent: Event {
 }
 
 struct TestCommand: Command {
-    func execute(state: TestState, store: Store<TestState>) {
+    typealias StateType = TestState
+
+    func execute(state: StateType, store: Store<StateType>) {
         store.dispatch(event: TestStringEvent(value: "OK"))
     }
 }
 
 struct TestConditionalCommand: Command {
-    func execute(state: TestState, store: Store<TestState>) {
+    typealias StateType = TestState
+
+    func execute(state: StateType, store: Store<StateType>) {
         if state.value == "INIT" {
             store.dispatch(event: TestStringEvent(value: "OK"))
         } else {
@@ -43,7 +47,9 @@ struct TestConditionalCommand: Command {
 }
 
 struct TestAsyncCommand: Command {
-    func execute(state: TestState, store: Store<TestState>) {
+    typealias StateType = TestState
+
+    func execute(state: StateType, store: Store<StateType>) {
         DispatchQueue.global(qos: .default).async {
             store.dispatch(event: TestStringEvent(value: "OK"))
         }

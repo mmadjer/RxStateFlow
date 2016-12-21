@@ -9,7 +9,9 @@
 import RxStateFlow
 
 struct IncreaseCounter: Command {
-    func execute(state: AppState, store: Store<AppState>) {
+    typealias StateType = AppState
+
+    func execute(state: StateType, store: Store<StateType>) {
         if state.counter < state.maxCounterValue {
             store.dispatch(event: CounterEvent.increase)
         } else {
@@ -19,7 +21,9 @@ struct IncreaseCounter: Command {
 }
 
 struct DecreaseCounter: Command {
-    func execute(state: AppState, store: Store<AppState>) {
+    typealias StateType = AppState
+
+    func execute(state: StateType, store: Store<StateType>) {
         if state.counter > state.minCounterValue {
             store.dispatch(event: CounterEvent.decrease)
         } else {

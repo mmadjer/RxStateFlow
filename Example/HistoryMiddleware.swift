@@ -26,10 +26,10 @@ public enum HistoryEvent: Event {
 }
 
 open class HistoryRecord: Object {
-    private(set) dynamic var timestamp = Date()
-    private(set) dynamic var type: String = ""
-    private(set) dynamic var data: Data!
-    private(set) dynamic var state: AppState!
+    fileprivate(set) dynamic var timestamp = Date()
+    fileprivate(set) dynamic var type: String = ""
+    fileprivate(set) dynamic var data: Data!
+    fileprivate(set) dynamic var state: AppState!
 
     var raw: [String : Any]? {
         var raw: [String : Any]?
@@ -58,7 +58,7 @@ open class HistoryRecord: Object {
     /// - Returns: The Event type and data
     /// - Throws: `SerializationError.UnsupportedType` if the `Event` is neither struct nor enum.
     /// `SerializationError.UnsupportedSubType` if the `Event` has unsupported poperty types.
-    private func serialize(_ event: Event) throws -> (String, Data) {
+    fileprivate func serialize(_ event: Event) throws -> (String, Data) {
         let mirror = Mirror(reflecting: event)
 
         guard mirror.displayStyle == .struct || mirror.displayStyle == .enum else {
@@ -103,6 +103,7 @@ enum HistoryLimit {
 }
 
 struct HistoryMiddleware: Middleware {
+    typealias StateType = AppState
 
     let historyLimit: HistoryLimit
 
@@ -119,7 +120,7 @@ struct HistoryMiddleware: Middleware {
         } catch _ { }
     }
 
-    func before(event: Event, state: AppState) {
+    func before(event: Event, state: StateType) {
         switch event {
         // avoid endless recursion by checking if we've dispatched an error event
         case is ErrorEvent:
@@ -132,7 +133,7 @@ struct HistoryMiddleware: Middleware {
         default:
             do {
                 let history = state.realm!.objects(History.self).first!
-                let copy = AppState(value: state)
+                let copy = StateType(value: state)
                 let record = try HistoryRecord(event: event, state: copy)
 
                 history.records.append(record)
@@ -151,7 +152,7 @@ struct HistoryMiddleware: Middleware {
         }
     }
 
-    func after(event: Event, state: AppState) {
+    func after(event: Event, state: StateType) {
         switch event {
         case HistoryEvent.undo:
             let history = state.realm!.objects(History.self).first!

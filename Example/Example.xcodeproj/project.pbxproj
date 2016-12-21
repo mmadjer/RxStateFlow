@@ -294,12 +294,12 @@
 					28F828CB1C4B714D00330CF4 = {
 						CreatedOnToolsVersion = 7.2;
 						DevelopmentTeam = R7Z6749JJ5;
-						LastSwiftMigration = 0810;
+						LastSwiftMigration = 0820;
 					};
 					28F828DF1C4B714D00330CF4 = {
 						CreatedOnToolsVersion = 7.2;
 						DevelopmentTeam = R7Z6749JJ5;
-						LastSwiftMigration = 0800;
+						LastSwiftMigration = 0820;
 						TestTargetID = 28F828CB1C4B714D00330CF4;
 					};
 				};

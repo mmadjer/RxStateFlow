@@ -215,13 +215,13 @@
 				TargetAttributes = {
 					28F8287C1C494B2C00330CF4 = {
 						CreatedOnToolsVersion = 7.2;
-						LastSwiftMigration = 0810;
+						LastSwiftMigration = 0820;
 						ProvisioningStyle = Automatic;
 					};
 					28F828861C494B2C00330CF4 = {
 						CreatedOnToolsVersion = 7.2;
 						DevelopmentTeam = R7Z6749JJ5;
-						LastSwiftMigration = 0810;
+						LastSwiftMigration = 0820;
 						ProvisioningStyle = Automatic;
 					};
 				};

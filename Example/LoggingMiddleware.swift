@@ -9,8 +9,9 @@
 import RxStateFlow
 
 struct LoggingMiddleware: Middleware {
+    typealias StateType = AppState
 
-    func before(event: Event, state: AppState) {
+    func before(event: Event, state: StateType) {
         switch event {
         case let event as UpdateCounter:
             print("About to update counter from \(state.counter) to \(event.value)")
@@ -23,7 +24,7 @@ struct LoggingMiddleware: Middleware {
         }
     }
 
-    func after(event: Event, state: AppState) {
+    func after(event: Event, state: StateType) {
         switch event {
         case _ as UpdateCounter:
             print("Counter updated to \(state.counter)")
