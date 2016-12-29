@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name         = "RxStateFlow"
-  s.version      = "1.0.1"
+  s.version      = "1.0.2"
   s.summary      = "Persistent Reactive Unidirectional Date Flow with Realm and RxSwift."
   s.description  = <<-DESC
   An implementation of a Persistent Reactive Unidirectional Date Flow using Realm and RxSwift.
