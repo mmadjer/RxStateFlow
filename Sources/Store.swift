@@ -63,17 +63,8 @@ open class Store<State: StateObject> {
             state = Variable(stateObjects.first!)
         }
 
-        stateNotification = stateObjects.addNotificationBlock {
-            [weak self] (changes: RealmCollectionChange) in
-
-            switch changes {
-            case .initial(let state), .update(let state, _, _, _):
-                if let state = state.first {
-                    self?.state.value = state
-                }
-            case .error(let error):
-                self?.dispatch(event: ErrorEvent.add(error))
-            }
+        stateNotification = realm.addNotificationBlock { [weak self] (notification, realm) in
+            self?.state.value = realm.objects(State.self).first!
         }
     }
 
