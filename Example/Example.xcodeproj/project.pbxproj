@@ -554,6 +554,7 @@
 				DEVELOPMENT_TEAM = R7Z6749JJ5;
 				FRAMEWORK_SEARCH_PATHS = ../Carthage/Build/iOS;
 				INFOPLIST_FILE = "$(SRCROOT)/Example/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = io.RxStateFlow.Example;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -569,6 +570,7 @@
 				DEVELOPMENT_TEAM = R7Z6749JJ5;
 				FRAMEWORK_SEARCH_PATHS = ../Carthage/Build/iOS;
 				INFOPLIST_FILE = "$(SRCROOT)/Example/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = io.RxStateFlow.Example;
 				PRODUCT_NAME = "$(TARGET_NAME)";
