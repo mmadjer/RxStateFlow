@@ -35,8 +35,7 @@ class HistoryViewController: UITableViewController {
             Observable.from(history.records)
                 .bindTo(tableView
                     .rx
-                    .items(cellIdentifier: "RecordCell", cellType: RecordCell.self)) {
-                        row, record, cell in
+                    .items(cellIdentifier: "RecordCell", cellType: RecordCell.self)) { _, record, cell in
                         cell.record = record
                     }
                 .addDisposableTo(bag)

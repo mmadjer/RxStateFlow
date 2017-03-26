@@ -94,7 +94,7 @@ class ViewController: UIViewController {
             let alert = UIAlertController(title: "Ooops",
                                           message: message,
                                           preferredStyle: .alert)
-            let action = UIAlertAction(title: "Ok", style: .default, handler: { action in
+            let action = UIAlertAction(title: "Ok", style: .default, handler: { _ in
                 store.dispatch(event: ErrorEvent.remove)
             })
             alert.addAction(action)

@@ -65,7 +65,7 @@ open class HistoryRecord: Object {
             throw EventSerializationError.unsupportedType
         }
 
-        var dictionary = [String : Any]()
+        var dictionary = [String: Any]()
         for case let (label?, anyValue) in mirror.children {
             dictionary[label] = anyValue
         }
