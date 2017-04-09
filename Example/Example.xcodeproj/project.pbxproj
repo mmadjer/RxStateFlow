@@ -298,7 +298,7 @@
 					};
 					28F828DF1C4B714D00330CF4 = {
 						CreatedOnToolsVersion = 7.2;
-						DevelopmentTeam = R7Z6749JJ5;
+						DevelopmentTeam = 6DXN2VBV2N;
 						LastSwiftMigration = 0820;
 						TestTargetID = 28F828CB1C4B714D00330CF4;
 					};
@@ -580,7 +580,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
-				DEVELOPMENT_TEAM = R7Z6749JJ5;
+				DEVELOPMENT_TEAM = 6DXN2VBV2N;
 				INFOPLIST_FILE = ExampleUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = io.RxSateFlow.ExampleUITests;
@@ -596,7 +596,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
-				DEVELOPMENT_TEAM = R7Z6749JJ5;
+				DEVELOPMENT_TEAM = 6DXN2VBV2N;
 				INFOPLIST_FILE = ExampleUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = io.RxSateFlow.ExampleUITests;
