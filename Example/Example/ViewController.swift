@@ -30,7 +30,7 @@ class ViewController: UIViewController {
 
         let realm = try? Realm()
         let history = realm!.objects(History.self).first!
-        Observable.from(history.records)
+        Observable.collection(from: history.records)
             .map { !$0.isEmpty }
             .bindTo(undoButton.rx.isEnabled)
             .addDisposableTo(bag)

@@ -12,13 +12,13 @@ public protocol AnyMiddleware {
     ///
     /// - parameter event: The event that is being dispatched to the store.
     /// - parameter state: The current state.
-    func _before(event: Event, state: Any)
+    func before(event: Event, state: Any)
 
     /// Called after the dispatched Event has been processed.
     ///
     /// - parameter event: The event that is being dispatched to the store.
     /// - parameter state: The current state.
-    func _after(event: Event, state: Any)
+    func after(event: Event, state: Any)
 }
 
 /// Defines the interface of Middlewares in RxStateFlow.
@@ -36,13 +36,13 @@ public protocol Middleware: AnyMiddleware {
 
 public extension Middleware {
 
-    func _before(event: Event, state: Any) {
+    func before(event: Event, state: Any) {
         if let state = state as? StateType {
             before(event: event, state: state)
         }
     }
 
-    func _after(event: Event, state: Any) {
+    func after(event: Event, state: Any) {
         if let state = state as? StateType {
             after(event: event, state: state)
         }

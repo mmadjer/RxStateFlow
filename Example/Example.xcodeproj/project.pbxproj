@@ -293,7 +293,7 @@
 				TargetAttributes = {
 					28F828CB1C4B714D00330CF4 = {
 						CreatedOnToolsVersion = 7.2;
-						DevelopmentTeam = R7Z6749JJ5;
+						DevelopmentTeam = 6DXN2VBV2N;
 						LastSwiftMigration = 0820;
 					};
 					28F828DF1C4B714D00330CF4 = {
@@ -551,7 +551,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = R7Z6749JJ5;
+				DEVELOPMENT_TEAM = 6DXN2VBV2N;
 				FRAMEWORK_SEARCH_PATHS = ../Carthage/Build/iOS;
 				INFOPLIST_FILE = "$(SRCROOT)/Example/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -566,7 +566,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = R7Z6749JJ5;
+				DEVELOPMENT_TEAM = 6DXN2VBV2N;
 				FRAMEWORK_SEARCH_PATHS = ../Carthage/Build/iOS;
 				INFOPLIST_FILE = "$(SRCROOT)/Example/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";

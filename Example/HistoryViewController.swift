@@ -27,12 +27,12 @@ class HistoryViewController: UITableViewController {
             let realm = try Realm()
             if let history = realm.objects(History.self).first {
 
-            Observable.from(history.records)
+            Observable.collection(from: history.records)
                 .map { !$0.isEmpty }
                 .bindTo(trashButton.rx.isEnabled)
                 .addDisposableTo(bag)
 
-            Observable.from(history.records)
+            Observable.collection(from: history.records)
                 .bindTo(tableView
                     .rx
                     .items(cellIdentifier: "RecordCell", cellType: RecordCell.self)) { _, record, cell in

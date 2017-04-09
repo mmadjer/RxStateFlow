@@ -63,7 +63,7 @@ open class Store<State: StateObject> {
             state = Variable(stateObjects.first!)
         }
 
-        stateNotification = realm.addNotificationBlock { [weak self] (notification, realm) in
+        stateNotification = realm.addNotificationBlock { [weak self] (_, realm) in
             self?.state.value = realm.objects(State.self).first!
         }
     }
@@ -90,9 +90,9 @@ extension Store {
         handleError(event)
 
         updateState { state in
-            middlewares.forEach { $0.middleware._before(event: event, state: state) }
+            middlewares.forEach { $0.middleware.before(event: event, state: state) }
             state.react(to: event)
-            middlewares.reversed().forEach { $0.middleware._after(event: event, state: state) }
+            middlewares.reversed().forEach { $0.middleware.after(event: event, state: state) }
         }
     }
 
